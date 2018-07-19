@@ -1,0 +1,15 @@
+.side-toolbar {
+    text-align: left;
+}
+
+.footer-text,
+.home-text,
+.top-toolbar,
+.chart {
+    text-align: center;
+    margin: auto;
+}
+
+.footer-text {
+    margin-top: 100px;
+}
