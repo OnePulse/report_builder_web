@@ -14,18 +14,18 @@ class Login extends Component {
         super(props);
 
         this.state = {
-            email: '',
+            username: '',
             password: ''
         };
 
-        this.setEmail = this.setEmail.bind(this);
+        this.setUsername = this.setUsername.bind(this);
         this.setPassword = this.setPassword.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    setEmail(event) {
+    setUsername(event) {
 
-        this.setState({email: event.target.value});
+        this.setState({username: event.target.value});
     }
 
     setPassword(event) {
@@ -50,12 +50,12 @@ class Login extends Component {
                         <Form onSubmit={this.handleSubmit}>
                             <FormGroup>
                                 <Label for="email">Email</Label>
-                                <Input type="email" name="email" id="email" placeholder="email"
-                                       value={this.state.email} onChange={this.setEmail} />
+                                <Input type="email" name="username" id="username" placeholder="email" required
+                                       value={this.state.username} onChange={this.setUsername} />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="password">Password</Label>
-                                <Input type="password" name="password" id="password" placeholder="password"
+                                <Input type="password" name="password" id="password" placeholder="password" required
                                        value={this.state.password} onChange={this.setPassword} />
                             </FormGroup>
                             <Button>Submit</Button>

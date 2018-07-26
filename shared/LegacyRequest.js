@@ -14,13 +14,13 @@ import {constants} from './Constants'
  * Create an Axios Client with defaults
  */
 const client = axios.create({
-    baseURL: constants.API.BASE_URL
+    baseURL: constants.API.BASE_URL_LEGACY
 });
 
 /**
  * Request Wrapper with default success/error actions
  */
-const request = function(options) {
+const legacyRequest = function(options) {
 
     const onSuccess = function(response) {
         console.debug('Request Successful!', response);
@@ -49,4 +49,4 @@ const request = function(options) {
         .catch(onError);
 };
 
-export default request;
+export default legacyRequest;

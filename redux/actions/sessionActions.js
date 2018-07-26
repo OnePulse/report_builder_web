@@ -6,28 +6,37 @@ export function loginSuccess() {
     return {type: types.LOG_IN_SUCCESS}
 }
 
+export function logoutSuccess() {
+
+    return {type: types.LOG_OUT}
+}
+
 export function logInUser(credentials) {
 
     return function(dispatch) {
 
-        // return HTTPService.login(credentials).then(response => {
-        //
-        //     sessionStorage.setItem('access_token', response.access_token);
-        //     dispatch(loginSuccess());
-        // }).catch(error => {
-        //
-        //     throw(error);
-        // });
+        return HTTPService.login(credentials).then(response => {
 
-        //TODO: Remove this
-        sessionStorage.setItem('access_token', 'test_token');
-        dispatch(loginSuccess());
+            sessionStorage.setItem('access_token', response.access_token);
+            dispatch(loginSuccess());
+        }).catch(error => {
+
+            throw(error);
+        });
     };
 }
 
 export function logOutUser() {
 
-    sessionStorage.removeItem('access_token');
+    return function(dispatch) {
 
-    return {type: types.LOG_OUT}
+        return HTTPService.logout().then(response => {
+
+            sessionStorage.removeItem('access_token');
+            dispatch(logoutSuccess());
+        }).catch(error => {
+
+            throw(error);
+        });
+    };
 }
