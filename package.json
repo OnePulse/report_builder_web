@@ -18,7 +18,7 @@
   },
   "homepage": "github.com:OnePulse/report_builder_web#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.0.0",
     "history": "^4.7.2",
     "nivo": "^0.31.0",
