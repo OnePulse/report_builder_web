@@ -19,7 +19,7 @@
   "homepage": "github.com:OnePulse/report_builder_web#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.3.1",
     "history": "^4.7.2",
     "nivo": "^0.31.0",
     "prop-types": "^15.6.2",
